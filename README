@@ -1,0 +1,54 @@
+###  使用python3 虚拟环境构建和运行测试
+
+#### 虚拟环境使用方法
+
+1. if you’re not using Python 3, you’ll want to install the virtualenv tool with apt:
+python 3.4.2 会有一些软件包不兼容的问题， 需要安装 python 3.6 above, like 3.7.3 https://linuxize.com/post/how-to-install-python-3-7-on-debian-9/
+
+`$ apt-get install python3-venv`
+
+If you are using Python 3, then you should already have the venv module from the standard library installed.
+
+
+2. Create a new virtual environment inside the directory:
+
+
+`$ python3 -m venv env`
+
+*Note: By default, this will not include any of your existing site packages.*
+
+
+
+3. In order to use this environment’s packages/resources in isolation, you need to “activate” it. To do this, just run the following:
+
+`$ source env/bin/activate`
+注意到命令提示符变了，有个(venv)前缀，表示当前环境是一个名为venv的Python环境
+
+```
+➜  git:(master) ✗  source env/bin/activate
+(env) ➜  git:(master) ✗ 
+```
+
+if you need to go back to the “system” context by executing `deactivate`:
+```
+(env) ➜  git:(master) ✗ deactivate
+➜  git:(master) ✗
+```
+
+4. Now we can install dependencies related to the project in this virtual environment.
+
+`pip install -r  requirements.txt`   
+
+在venv环境下，用pip安装的包都被安装到venv这个环境下，系统Python环境不受任何影响。也就是说，venv环境是专门针对project这个应用创建的。
+
+virtualenv是如何创建“独立”的Python运行环境的呢？
+
+原理很简单，就是把系统Python复制一份到virtualenv的环境，用命令source venv/bin/activate进入一个virtualenv环境时，virtualenv会修改相关环境变量，让命令python和pip均指向当前的virtualenv环境。
+
+#### 运行测试的方法
+
+`pytest -vs tests/integration/test_instances_services.py`
+
+`pytest -vs tests/integration/test_instance.py -m error --html=report.html --self-contained-html`
+
+`pytest -vs tests/function/test_account_login.py --env=test --agst=AUExamNrVDQ1TFB6QzRNbG9TTXgxRGxidDY4T0FaTnBFTGxaRVUyWHF2VXhoSERsbE5NZUh3MDZDY1IrQ0gwalljeF7kVmIAAA== -m login`

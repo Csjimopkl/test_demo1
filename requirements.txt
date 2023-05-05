@@ -1,0 +1,68 @@
+pytest-dependency==0.3.2
+pytest==3.10.1
+pytest-html==1.18.0
+pytest-parallel
+setuptools==40.3.0
+requests==2.22.0
+greenlet>=0.4.10
+cython>=0.19.0
+circus>=0.16.1
+Flask>=1.1.1
+oss2>=2.9.0
+uWSGI>=2.0.18
+greenlet>=0.4.10
+cython>=0.19.0
+pyodps
+beautifulsoup4
+pymysql
+numpy
+
+{
+	"code": "2000000",
+	"msg": "操作成功",
+	"data": {
+		"totalNum": 11,
+		"totalPage": null,
+		"dataList": [{
+			"id": "813082334471419419",
+			"workOrderSource": "SUBMIT_CASE",
+			"skillGroupId": 14,
+			"skillGroupName": "一线技能组",
+			"ctime": 1677053934877,
+			"mtime": 1677054351165,
+			"toBStatus": "WAIT_PROCESS",
+			"toCStatus": "PROCESSING",
+			"processFlow": 1,
+			"customerId": 12,
+			"customerName": "赵天煜",
+			"customerServiceName": "天煜",
+			"workOrderTemplateId": 18,
+			"workOrderTemplateName": "提单功能测试页",
+			"evaluateScore": null,
+			"businessId": 100000,
+			"gameName": "平台测试游戏",
+			"userId": "f7d018e83e9bbc8c16b670550ef7b927",
+			"archivePath": null,
+			"replyContent": null,
+			"caseContent": {
+				"questionDesc": "提單",
+				"voucherPicture": [],
+				"game_version": "",
+				"airlineType": "lingxi",
+				"os": "ios",
+				"roleId": "A0F7B3C6CDC15BC2FEA96895C7064FD8",
+				"publishArea": "cn",
+				"language": "zh-hans",
+				"templateLanguage": "zh-hans",
+				"appCode": "sdk",
+				"aligames_version": "2.1.12",
+				"lua_version": "2.18.11",
+				"question_time": "2023-02-22 16:18:48",
+				"onlineType": 3,
+				"roleName": "令狐冲",
+				"ejoysdk_version": "2.8.2",
+				"questionType": "hy_question_bug",
+				"channelId": "998233"
+			},
+			"parentWorkOrderId": "813016901458359819"
+		}, {
